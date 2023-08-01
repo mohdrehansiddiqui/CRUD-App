@@ -1,17 +1,19 @@
-require("dotenv").config();
+
 const express = require("express");
 const mongoose = require("mongoose");
+require("dotenv").config();
 const session = require("express-session");
+
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-const mongoDBurl =
-  "mongodb+srv://rehgraphicstudio08august:mongorehan123@cluster0.pcycpph.mongodb.net/maindb?retryWrites=true&w=majority";
+const mongoDBurl = "mongodb+srv://rehgraphicstudio08august:mongorehan123@cluster0.pcycpph.mongodb.net/maindb?retryWrites=true&w=majority";
+  
 
 mongoose.connect(mongoDBurl, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  useUnifiedTopology: true, 
 });
 
 const db = mongoose.connection;
